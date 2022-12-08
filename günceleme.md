@@ -1,6 +1,6 @@
 # Wormholes güncellemesi 08.12.2022(v.10.1)
 
-## Kurulum için servis dosyası oluşturuyoruz aşağıdaki komudu yazın 
+## Kurulum için servis dosyası oluşturuyoruz aşağıdaki komudu yazın ( Daha önceden oluşturduysanız bu kısmı atlayın )
 ```
 nano ruesandora.sh 
 ```
