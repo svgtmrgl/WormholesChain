@@ -1,15 +1,4 @@
-# Wormholes güncellemesi 27.10.2022 (0.9.6)
-
-
-## Versiyon kontrol ediyoruz güncel versiyon V0.9.6
-```
-curl -X POST -H "Content-Type:application/json" --data '{"jsonrpc":"2.0","method":"eth_version","id":64}' http://127.0.0.1:8545
-```
-## Çıktı
-```
-V0.9.5
-```
-
+# Wormholes güncellemesi 08.12.2022(v.10.1)
 
 ## Kurulum için servis dosyası oluşturuyoruz aşağıdaki komudu yazın 
 ```
@@ -77,18 +66,19 @@ docker exec -it wormholes /usr/bin/cat /wm/.wormholes/wormholes/nodekey
 ```
 
 
-## Şimdi Kurulum için servis dosyamızı çalıştırıyoruz /// V0.9.5
+## Şimdi Kurulum için servis dosyamızı çalıştırıyoruz /// v0.10.1
 ```
 bash ./ruesandora.sh 
 ```
+Y deyip devam ediyoruz ve private keyimizi giriyoruz (0x ile başlayan key girin ). Otomatik kurulum gerçekleşecek ve bitecek.
 
-## Versiyon kontrol ediyoruz güncel versiyon V0.9.6
+## Versiyon kontrol ediyoruz güncel versiyon v0.10.1
 ```
 curl -X POST -H "Content-Type:application/json" --data '{"jsonrpc":"2.0","method":"eth_version","id":64}' http://127.0.0.1:8545
 ```
 ## Çıktı
 ```
-V0.9.6
+v0.10.1
 ```
 
 
