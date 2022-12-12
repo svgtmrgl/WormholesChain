@@ -1,4 +1,4 @@
-# Wormholes güncellemesi 12.12.2022(v0.10.3)
+# Wormholes güncellemesi 08.12.2022(v.10.1)
 
 ## Kurulum için servis dosyası oluşturuyoruz aşağıdaki komudu yazın ( Daha önceden oluşturduysanız bu kısmı atlayın )
 ```
@@ -21,16 +21,13 @@ fi
 #check docker service
 docker ps > /dev/null 2>&1
 if [ $? -ne 0 ] ; then
-
      echo "docker service is not running! you can use command start it:"
      echo "sudo service docker start"
      exit
 fi
-
 docker stop wormholes > /dev/null 2>&1
 docker rm wormholes > /dev/null 2>&1
 docker rmi wormholestech/wormholes:v1 > /dev/null 2>&1
-
 if [ -d /wm/.wormholes/keystore ]; then
    read -p "Whether to clear the Wormholes blockchain data history, if yes, press the “y” button, and if not, click “enter.”：" xyz
    if [ "$xyz" = 'y' ]; then
@@ -44,7 +41,6 @@ if [ -d /wm/.wormholes/keystore ]; then
 else
    read -p "Please import your private key：" ky
 fi
-
 if [ -n "$ky" ]; then
      if [ ${#ky} -eq 64 ];then
              mkdir -p /wm/.wormholes/wormholes
@@ -57,9 +53,7 @@ if [ -n "$ky" ]; then
              exit -1
      fi
 fi
-
 docker run -id -p 30303:30303 -p 8545:8545 -v /wm/.wormholes:/wm/.wormholes --name wormholes wormholestech/wormholes:v1
-
 echo "Your private key is:"
 sleep 6
 docker exec -it wormholes /usr/bin/cat /wm/.wormholes/wormholes/nodekey
@@ -110,7 +104,6 @@ function info(){
              let cn+=5
      done
 }
-
 function parse_json(){
       if [[ $# -gt 1 ]] && [[ $1 =~ $2 ]];then
          echo "${1//\"/}"|sed "s/.*$2:\([^,}]*\).*/\1/"
@@ -118,7 +111,6 @@ function parse_json(){
          echo "0x0"
      fi
 }
-
 function main(){
      if [[ $# -eq 0 ]];then
              info 8545
@@ -126,7 +118,6 @@ function main(){
              info $1
      fi
 }
-
 main "$@"
 ```
 
